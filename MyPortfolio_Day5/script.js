@@ -36,3 +36,30 @@ achievements.forEach(item => {
 
     cardsGrid.append(article);
 });
+
+const openBtn = document.querySelector('.btn-open');
+const closeBtn = document.querySelector('.btn-close');
+const modal = document.querySelector('.modal');
+
+openBtn.addEventListener('click', () => {
+    modal.classList.add('active');
+});
+
+closeBtn.addEventListener('click', () => {
+    modal.classList.remove('active');
+});
+
+const contactForm = document.querySelector('.feedback-form');
+
+contactForm.addEventListener('submit', (event) => {
+    event.preventDefault(); 
+    console.log("Форма перехвачена, перезагрузки не было!"); 
+});
+
+const messageInput = document.querySelector('.message-input');
+const charCounter = document.querySelector('.char-counter');
+
+messageInput.addEventListener('input', (event) => {
+    const currentLength = event.target.value.length; 
+    charCounter.textContent = `${currentLength}/100`; 
+});
