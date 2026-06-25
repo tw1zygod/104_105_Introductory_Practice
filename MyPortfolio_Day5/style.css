@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Montserrat', sans-serif;
     margin: 0px; 
@@ -51,8 +55,8 @@ body {
 .content-section {
     padding: 30px;
     background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
     margin-bottom: 30px;
 }
 
@@ -67,16 +71,25 @@ body {
 
 .section-text {
     color: #334155;
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
 .profile-photo {
     width: 100%;
-    max-width: 250px;
-    border: 5px solid #38bdf8;
-    border-radius: 15px;
+    max-width: 220px;
+    height: 220px;
+    object-fit: cover;
+    border: 4px solid #38bdf8;
+    border-radius: 50%;
     display: block;
     margin-top: 20px;
+    box-shadow: 0 8px 16px rgba(56, 189, 248, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-photo:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 20px rgba(56, 189, 248, 0.4);
 }
 
 .cards-grid {
@@ -86,19 +99,20 @@ body {
     margin-top: 20px;
 }
 
-.project-card {
-    background-color: #f1f5f9;
-    padding: 20px;
-    border-radius: 8px;
+.project-card, .hobby-card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    padding: 24px;
+    border-radius: 12px;
     display: flex;
     flex-direction: column;
     gap: 15px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+.project-card:hover, .hobby-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.08);
 }
 
 .project-card .card-title,
@@ -173,11 +187,16 @@ body {
     font-family: inherit;
     cursor: pointer;
     margin-top: 10px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.1s ease;
 }
 
 .submit-btn:hover {
     background-color: #0284c7;
+    transform: translateY(-2px);
+}
+
+.submit-btn:active {
+    transform: scale(0.98);
 }
 
 .contacts-list {
